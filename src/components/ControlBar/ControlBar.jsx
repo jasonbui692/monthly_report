@@ -12,7 +12,7 @@ import { AppContext } from "../App";
 import { Button } from "@material-ui/core";
 import Tooltip from "@material-ui/core/Tooltip";
 
-import { getEventData } from "../actions";
+import { getEventData } from "../../actions";
 
 const ControlBar = props => {
   const { d2, selectedOu } = props;

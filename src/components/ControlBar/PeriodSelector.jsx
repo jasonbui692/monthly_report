@@ -1,22 +1,22 @@
 /* Author Hoang */
 import React from "react";
-import { App as D2UIApp, mui3theme as dhis2theme } from "@dhis2/d2-ui-core";
+import { App as D2UIApp } from "@dhis2/d2-ui-core";
 import PeriodPicker from "./D2PeriodPicker";
 import parsePeriod from "d2/period/parser";
-import { selectPeriod } from "../actions/current";
+import { selectPeriod } from "../../actions/current";
 import { connect } from "react-redux";
 
 const PeriodSelector = props => {
-  const { d2, selectedPe, selectedPeType } = props;
+  const { d2, selectedPeriod, selectedPeType } = props;
   return (
     <div style={{ padding: 30 }}>
       <D2UIApp>
         <PeriodPicker
           d2={d2}
-          selectedPeriod={selectedPe ? selectedPe : null}
+          selectedPeriod={selectedPeriod ? selectedPeriod : null}
           periodType={selectedPeType}
           onPickPeriod={value => {
-            // handleSelectPeriod(parsePeriod(value));
+            props.selectPeriod(parsePeriod(value));
           }}
         />
       </D2UIApp>
@@ -31,7 +31,7 @@ const mapDispatchToProps = {
 const mapStateToProps = state => {
   return {
     selectedPeType: state.current.selectedPeType,
-    selectedPe: state.current.selectedPe
+    selectedPeriod: state.current.selectedPeriod
   };
 };
 

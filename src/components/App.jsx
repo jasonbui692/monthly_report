@@ -5,8 +5,6 @@ import HeaderBar from "@dhis2/d2-ui-header-bar";
 import { createHashHistory } from "history";
 import { SnackbarProvider } from "notistack";
 
-import Button from "./Button";
-
 import ControlBar from "./ControlBar/ControlBar";
 import MainView from "./MainView/MainView";
 import { template } from "../config/mapping-config";

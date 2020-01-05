@@ -8,8 +8,8 @@ export default (state = defaultState, action) => {
       return { ...state, selectedOu: action.selectedOu };
     case "SET_PERIOD_TYPE":
       return { ...state, selectedPeType: action.selectedPeType };
-    case "SET_PERIOD":
-      return { ...state, selectedPe: action.selectedPe };
+    case "SET_PERIOD":      
+      return { ...state, selectedPeriod: action.selectedPeriod };
     case "EVENT_DATA_RECEIVED":
       let hiddenFields = [
         "longitude",
@@ -34,8 +34,6 @@ export default (state = defaultState, action) => {
             minWidth: "50"
           };
         });
-
-        
 
       let data = action.json.rows.map(r => {
         return headers.reduce((obj, h, idx) => {

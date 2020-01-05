@@ -5,7 +5,7 @@ import LoadingMask from "../LoadingMask/LoadingMask";
 import { dhis2 } from "../../config/config";
 import { connect } from "react-redux";
 
-import { selectOrg } from "../actions/current";
+import { selectOrg } from "../../actions/current";
 
 const OrgUnitSelector = props => {
   const { d2, selectedOu } = props;
